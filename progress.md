@@ -37,6 +37,7 @@
 - v1.6：学习 `goal-prompt-template-skill` 的 outcome-first goal compiler，并对真实多会话存储系统项目执行对话审计。
 - v1.6 verdict：不新增重复 prompt skill；将 Goal Brief/approval gate 并入 `research-program-manager`，将对话压缩、重复问题聚类和冲突保留并入 `research-knowledge-curator`。
 - v1.6 validation：新增对话压缩 fixture/output；真实项目产生私有 handoff，公开包仅保留去标识化规则和验证记录。
+- v1.6 installation：11 个自定义 skill 已安装到 `$CODEX_HOME/skills`；安装器 dry-run 正确拒绝静默覆盖，安装后的 `SKILL.md` 与包内版本逐项一致。
 
 ## 批次 2026-06-21：小红书 Codex/Skill/科研工作流笔记
 
@@ -66,7 +67,7 @@
 
 | 输入材料 | 提炼结论 | 转化产物 | 验证结果 | 下一步 |
 |---|---|---|---|---|
-| 小红书短链 `7TV5moYC2gx`、公开 `goal-prompt-template-skill`、存储系统项目的最近四个会话、代码和结果摘要 | 短链 HTTP/HTTPS 均 404，不能提炼；公开 skill 中 outcome-first、默认假设、最少 blocker questions、inspection/repair gate 可迁移。真实项目证明：对话必须压成 session inventory、verified/model/unverified 分类、decision log、重复问题 cluster 和 context capsule；不能把模拟器规则写成硬件事实。 | 更新 `research-program-manager`、`research-knowledge-curator`、workflow、checklist、prompt templates、使用示例；新增 adversarial fixture/output、[验证记录](validation/goal-prompt-and-conversation-curation-2026-06-22.md) 和 v1.6 review；生成未公开的项目 handoff。 | Goal compiler 与 conversation curation Pass；私有项目 audit 找到模型语义、机制归因、变体混杂、指标混用、runtime build 和版本管理问题。小红书内容为 Drop/待补材料。 | 在第二项目 A/B 验证减少追问与返工；用户批准后将私有 handoff 写入目标项目 `docs/`；为 storage 项目先固定 run manifest 和 request-level latency gate。 |
+| 小红书短链 `7TV5moYC2gx`、公开 `goal-prompt-template-skill`、存储系统项目的最近四个会话、代码和结果摘要 | 短链 HTTP/HTTPS 均 404，不能提炼；公开 skill 中 outcome-first、默认假设、最少 blocker questions、inspection/repair gate 可迁移。真实项目证明：对话必须压成 session inventory、verified/model/unverified 分类、decision log、重复问题 cluster 和 context capsule；不能把模拟器规则写成硬件事实。 | 更新 `research-program-manager`、`research-knowledge-curator`、workflow、checklist、prompt templates、使用示例；新增 adversarial fixture/output、[验证记录](validation/goal-prompt-and-conversation-curation-2026-06-22.md) 和 v1.6 review；生成未公开的项目 handoff 并复制到目标项目 `docs/`。 | Goal compiler 与 conversation curation Pass；私有项目 audit 找到模型语义、机制归因、变体混杂、指标混用、runtime build 和版本管理问题。小红书内容为 Drop/待补材料。 | 在第二项目 A/B 验证减少追问与返工；为 storage 项目先固定 run manifest 和 request-level latency gate。 |
 
 ## 本批次沉淀出的能力
 

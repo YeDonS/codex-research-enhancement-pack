@@ -39,7 +39,8 @@
 | 已转化为 skill、workflow、checklist、template、fixture 和 review | Pass |
 | 每项方法保留触发、输入、步骤、输出、标准和 failure repair | Pass, via updated skills and workflow |
 | 私有会话不进入公开仓库 | Pass |
-| 真实项目可从 context capsule 恢复 | Pass, pending user approval to save the private report under the project directory |
+| 真实项目可从 context capsule 恢复 | Pass, private report copied to the target project's `docs/` directory |
+| 11 个自定义 skill 已安装到 `$CODEX_HOME/skills` 并与包内定义逐项一致 | Pass |
 
 ## Remaining Validation
 

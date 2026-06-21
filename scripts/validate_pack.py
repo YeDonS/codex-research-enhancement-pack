@@ -44,6 +44,7 @@ REQUIRED_FILES = [
     "validation/phase-1-validation.md",
     "validation/real-task-hot-value-tiering-2026-06-21.md",
     "validation/goal-prompt-and-conversation-curation-2026-06-22.md",
+    "validation/goal-completion-audit-2026-06-22.md",
     "evals/eval-plan.md",
 ]
 

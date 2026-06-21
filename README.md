@@ -2,7 +2,7 @@
 
 版本：v1.6
 
-这个包把本批小红书笔记中可迁移的方法沉淀为可复用的 Codex 科研流程。当前产物是 workspace 内的草案包，尚未安装到 `$CODEX_HOME/skills`。
+这个包把本批小红书笔记中可迁移的方法沉淀为可复用的 Codex 科研流程。当前工作站已将 11 个 skill 安装到 `$CODEX_HOME/skills`；其他环境按安装手册执行即可。
 
 GitHub：[YeDonS/codex-research-enhancement-pack](https://github.com/YeDonS/codex-research-enhancement-pack)
 
