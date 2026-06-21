@@ -30,6 +30,7 @@
 - v1.4：新增 `research-program-manager` skill、长期目标漂移 fixture 和输出，覆盖 requirement audit、milestones、单一 active task、decision log 和 blocker recurrence。
 - v1.4 review：明确长期任务失败标准：不能把结构通过当完成，不能多个 in-progress，不能因单个外部依赖停止全部工作。
 - v1.4 validation：11 个 skill 完整安装成功；重复安装被拒绝；显式 `--force` 可替换指定 skill；整包和 Markdown 链接验证通过。
+- v1.4 GitHub：已发布公开仓库 `https://github.com/YeDonS/codex-research-enhancement-pack`；初始远端提交 `e53b0fc` 与本地 `main` 一致。
 
 ## 批次 2026-06-21：小红书 Codex/Skill/科研工作流笔记
 
