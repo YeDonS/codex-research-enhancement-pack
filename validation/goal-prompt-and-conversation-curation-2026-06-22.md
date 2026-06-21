@@ -14,7 +14,7 @@
 | Source | Status | Use |
 |---|---|---|
 | 小红书短链 `7TV5moYC2gx` | 不可读，HTTPS/HTTP 均返回 404 | 只记录来源失败，不提炼内容 |
-| `linhucong814-cyber/goal-prompt-template-skill` | 可读 | 提炼 goal compiler 的四项可迁移规则 |
+| [goal-prompt-template-skill](https://github.com/linhucong814-cyber/goal-prompt-template-skill) | 可读 | 提炼 goal compiler 的四项可迁移规则 |
 | 多轮存储系统项目对话 | 私有原始材料，仅本地审计 | 验证 conversation curation；公开包不复制原对话或本机路径 |
 
 ## Transferable Method Units
