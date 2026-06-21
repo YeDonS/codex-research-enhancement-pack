@@ -232,3 +232,29 @@
 - Program charter、requirement audit、milestones、work queue 和 decision log。
 - Scope drift 被拒绝或映射到完成标准。
 - Completion/blocked 状态由证据和规则决定。
+
+## 示例 10：两篇论文到可验证系统选题
+
+```text
+依次使用 $literature-evidence-reader、$research-question-council 和
+$experiment-design-planner 处理两篇系统论文和已有笔记。
+
+研究设想：在 key/value 分离的 LSM 中识别反复扫描的 hot ranges，
+把 values 从 slow vlog 提升到 2 GB fast vlog，并考虑在 GC 时搬迁。
+
+要求：
+1. 每个关键判断绑定论文页码、图、表或 section。
+2. 区分已有机制、真正缺口和仍需检索的 novelty。
+3. 不预设 promotion 会降低总写放大。
+4. 给出 crash-safe publication、并发更新、cold eviction 和 GC 方案。
+5. 定义 baseline、ablation、primary metric、guardrails 和 decision rules。
+6. codebase 或硬件未定时标 Partial Pass，不写 execution-ready。
+```
+
+预期输出：
+
+- 淘汰与已有论文重复的宽泛问题。
+- 给出一个可证伪的 narrow research question。
+- 将 2 GB 绑定 DB ratio、hot-set capacity 和 GC headroom。
+- 把 promotion、mapping update、fast/slow GC 和 demotion 写入总 WA 模型。
+- 输出 trace pilot、correctness MVP 和后续优化的分阶段路线。

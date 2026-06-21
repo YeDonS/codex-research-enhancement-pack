@@ -87,6 +87,7 @@ Use this skill when the user asks to design an experiment, test a hypothesis, pl
 - At least one guardrail metric is included when harms or regressions are plausible.
 - Confounders and subgroup risks are explicitly listed.
 - The plan includes commands or concrete execution steps when code is available.
+- If codebase, hardware, data version, or runnable commands are still unknown, label the result plan-only or partial pass instead of execution-ready.
 - Decision rules include what to do if metrics conflict.
 - Reproducibility details are sufficient for another session to rerun or audit.
 
@@ -97,3 +98,4 @@ Use this skill when the user asks to design an experiment, test a hypothesis, pl
 - If data quality is weak, run a data audit before model comparison.
 - If the result is underpowered, label it exploratory and avoid strong claims.
 - If reproduction details are missing, stop and create a run log template before executing.
+- If implementation target or hardware is undecided, finish the hypothesis and pilot design, list the missing execution inputs, and do not claim a full validation pass.

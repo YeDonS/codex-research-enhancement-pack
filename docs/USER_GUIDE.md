@@ -105,3 +105,8 @@ python3 scripts/install_skills.py --all
 - `reviews/`：每阶段方法有效性复盘。
 
 结构校验通过只证明包完整，不证明真实科研能力已经验证。真实任务结果应继续追加到 `validation/` 和 `progress.md`。
+
+## 8. 真实任务参考
+
+- [WiscKey + HotRAP：面向范围扫描的分层 Value Log](../validation/real-task-hot-value-tiering-2026-06-21.md)：展示如何从两篇全文证据出发，淘汰弱创新表述，形成研究问题、系统草图、GC/一致性协议、2 GB capacity policy、实验 guardrails 和 stop/revise/continue 规则。
+- 真实任务报告中的 `Pass` 只评价对应 skill 产物；没有运行代码时，实验设计必须标 `plan-only` 或 `Partial Pass`。

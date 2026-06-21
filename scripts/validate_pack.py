@@ -39,7 +39,9 @@ REQUIRED_FILES = [
     "reviews/stage-2026-06-21-v1.2-review.md",
     "reviews/stage-2026-06-21-v1.3-review.md",
     "reviews/stage-2026-06-21-v1.4-review.md",
+    "reviews/stage-2026-06-21-v1.5-review.md",
     "validation/phase-1-validation.md",
+    "validation/real-task-hot-value-tiering-2026-06-21.md",
     "evals/eval-plan.md",
 ]
 
