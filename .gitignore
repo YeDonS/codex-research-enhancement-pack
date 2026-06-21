@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.pdf
+*.zip
+data/
+datasets/
+artifacts/
+runs/

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Landscape Researcher"
+  short_description: "Run reproducible literature searches and gap audits"
+  default_prompt: "Use $literature-landscape-researcher to define a neutral search protocol, log queries and screening decisions, preserve contradictory evidence, audit gap claims, and produce a full-text reading queue."

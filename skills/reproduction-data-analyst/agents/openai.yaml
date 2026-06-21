@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reproduction Data Analyst"
+  short_description: "Audit reproducible code and data analysis results"
+  default_prompt: "Use $reproduction-data-analyst to audit this reproduction run, compare metrics to the paper target, and produce a reproducibility record."

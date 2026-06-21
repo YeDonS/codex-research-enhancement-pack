@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Question Council"
+  short_description: "Pressure-test research questions and hypotheses"
+  default_prompt: "Use $research-question-council to evaluate this research idea with critical roles and produce a final verdict."

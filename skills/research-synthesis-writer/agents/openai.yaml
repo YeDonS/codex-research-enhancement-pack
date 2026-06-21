@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Synthesis Writer"
+  short_description: "Write traceable research prose from evidence"
+  default_prompt: "Use $research-synthesis-writer to turn these evidence cards into scoped research prose with a traceability map and no unsupported claims."

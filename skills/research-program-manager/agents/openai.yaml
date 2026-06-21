@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Program Manager"
+  short_description: "Manage long-running research goals and evidence"
+  default_prompt: "Use $research-program-manager to preserve the full research objective, audit requirement evidence, maintain milestones and one active task, record decisions and blockers, and produce a resumable next-session handoff."

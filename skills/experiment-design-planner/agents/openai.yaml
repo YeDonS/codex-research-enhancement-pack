@@ -1,0 +1,4 @@
+interface:
+  display_name: "Experiment Design Planner"
+  short_description: "Plan robust experiments with guardrail metrics"
+  default_prompt: "Use $experiment-design-planner to design this experiment with hypotheses, variables, metrics, guardrails, decision rules, and reproducibility records."

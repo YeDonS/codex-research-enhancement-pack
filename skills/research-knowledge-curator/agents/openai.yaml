@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Knowledge Curator"
+  short_description: "Curate research notes and evidence"
+  default_prompt: "Use $research-knowledge-curator to audit these research materials, plan knowledge-base writes, deduplicate claims and papers, and create evidence-first paper, evidence, experiment, and index notes."

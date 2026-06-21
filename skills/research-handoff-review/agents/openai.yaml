@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Handoff Review"
+  short_description: "Create auditable handoffs for long research tasks"
+  default_prompt: "Use $research-handoff-review to close this research task with a handoff, evidence record, risks, and independent review."

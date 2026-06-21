@@ -1,0 +1,4 @@
+interface:
+  display_name: "Submission Readiness Reviewer"
+  short_description: "Audit papers and submission packages before submission"
+  default_prompt: "Use $submission-readiness-reviewer to audit this manuscript or submission package for blockers, claim-evidence traceability, reproducibility, venue compliance, and reviewer-response readiness before polishing."

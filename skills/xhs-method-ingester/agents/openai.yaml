@@ -1,0 +1,4 @@
+interface:
+  display_name: "XHS Method Ingester"
+  short_description: "Turn field notes into reusable Codex research skills"
+  default_prompt: "Use $xhs-method-ingester to process this batch of notes into methods, skills, workflows, checklists, and progress updates."

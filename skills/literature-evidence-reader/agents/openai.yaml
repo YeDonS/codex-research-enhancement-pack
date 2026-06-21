@@ -1,0 +1,4 @@
+interface:
+  display_name: "Literature Evidence Reader"
+  short_description: "Extract traceable evidence from research papers"
+  default_prompt: "Use $literature-evidence-reader to read this paper beyond the abstract and produce evidence cards, method cards, and a variable table."
