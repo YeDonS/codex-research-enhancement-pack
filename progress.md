@@ -1,6 +1,6 @@
 # Codex 科研能力增强进度记录
 
-更新时间：2026-06-21
+更新时间：2026-06-22
 
 ## 包级进展
 
@@ -34,6 +34,9 @@
 - v1.5：使用 WiscKey 和 HotRAP 两篇真实 PDF 及已有 Obsidian 笔记，联合验证 `literature-evidence-reader`、`research-question-council` 和 `experiment-design-planner`。
 - v1.5 verdict：淘汰“普通热 value promotion”表述，将问题收窄为 repeated hot-range tracking、key-ordered fast-vLog extent、GC-assisted relocation 和 total WA guardrail。
 - v1.5 validation：真实任务产物 rubric 15/16；文献精读与选题委员会通过，实验计划因 codebase、硬件和命令未定而部分通过。
+- v1.6：学习 `goal-prompt-template-skill` 的 outcome-first goal compiler，并对真实多会话存储系统项目执行对话审计。
+- v1.6 verdict：不新增重复 prompt skill；将 Goal Brief/approval gate 并入 `research-program-manager`，将对话压缩、重复问题聚类和冲突保留并入 `research-knowledge-curator`。
+- v1.6 validation：新增对话压缩 fixture/output；真实项目产生私有 handoff，公开包仅保留去标识化规则和验证记录。
 
 ## 批次 2026-06-21：小红书 Codex/Skill/科研工作流笔记
 
@@ -59,6 +62,12 @@
 |---|---|---|---|---|
 | WiscKey 全文 PDF、HotRAP 全文 PDF、两篇 Obsidian 既有笔记、少量定向 related-work 元数据 | 普通 record-hot promotion 已被 HotRAP 覆盖；更有价值的问题是 repeated range hotness、value-only key-ordered extent、2 GB capacity admission、GC-assisted relocation 和 crash-safe mapping publication。GC 只能摊销部分 source read，不能视为零成本；逐 key index update 可能增加 WA。 | [真实任务验证报告](validation/real-task-hot-value-tiering-2026-06-21.md)；研究问题 council；双 vLog 系统草图；P0-P3 实验路线；v1.5 review；实验 skill 的 execution-readiness 修正规则。 | 文献精读 Pass；研究问题委员会 Pass；实验计划 Partial Pass。Rubric 15/16，缺少选定 codebase、设备、版本和可运行命令；未声明系统方法有效或 novelty 已确认。 | 建 systematic related-work protocol；先做 2 GB trace simulator；通过后实现 direct-pointer correctness MVP 和 crash tests。 |
 
+## 学习与真实项目批次 2026-06-22：Goal Prompt 与对话压缩
+
+| 输入材料 | 提炼结论 | 转化产物 | 验证结果 | 下一步 |
+|---|---|---|---|---|
+| 小红书短链 `7TV5moYC2gx`、公开 `goal-prompt-template-skill`、存储系统项目的最近四个会话、代码和结果摘要 | 短链 HTTP/HTTPS 均 404，不能提炼；公开 skill 中 outcome-first、默认假设、最少 blocker questions、inspection/repair gate 可迁移。真实项目证明：对话必须压成 session inventory、verified/model/unverified 分类、decision log、重复问题 cluster 和 context capsule；不能把模拟器规则写成硬件事实。 | 更新 `research-program-manager`、`research-knowledge-curator`、workflow、checklist、prompt templates、使用示例；新增 adversarial fixture/output、[验证记录](validation/goal-prompt-and-conversation-curation-2026-06-22.md) 和 v1.6 review；生成未公开的项目 handoff。 | Goal compiler 与 conversation curation Pass；私有项目 audit 找到模型语义、机制归因、变体混杂、指标混用、runtime build 和版本管理问题。小红书内容为 Drop/待补材料。 | 在第二项目 A/B 验证减少追问与返工；用户批准后将私有 handoff 写入目标项目 `docs/`；为 storage 项目先固定 run manifest 和 request-level latency gate。 |
+
 ## 本批次沉淀出的能力
 
 | 能力 | 触发条件 | 输入材料 | 执行步骤 | 输出格式 | 质量标准 | 失败时修正 |
@@ -81,6 +90,7 @@
 - `literature-evidence-reader` 已通过两篇真实 PDF 的全文、图表和方法验证；仍需在有 supplement/code 的论文上验证跨材料追踪。
 - `research-question-council` 已在真实选题上完成压力测试；仍需比较是否真的优于普通 brainstorm，指标包括问题新颖性、可证伪性、实验成本和证据一致性。
 - `experiment-design-planner` 已产出真实系统实验计划，但 codebase、硬件、版本和命令未定，尚不能判为 execution-ready。
+- `research-knowledge-curator` 和 `research-program-manager` 已通过一组真实多会话项目；仍需在独立项目复跑，检查是否真能减少追问和返工。
 - 长期任务 handoff 是否适合非代码科研任务，需要用一次数据分析或文献综述任务试跑。
 - 最小 eval fixture 已完成同会话 smoke eval 并拆分为独立输出文件，但尚未由独立会话逐项执行；下一步应独立重跑 13 个 fixture 并记录评分。
 
@@ -92,4 +102,5 @@
 4. 用一个真实 notebook/CSV 运行 `reproduction-data-analyst`，验证缺失值、泄漏和敏感性分析检查是否足够具体。
 5. 用一个真实论文草稿或投稿包运行 `submission-readiness-reviewer`，验证 blocker 检查是否比单纯润色更有用。
 6. 用一个真实 Obsidian/Zotero 写入任务运行 `research-knowledge-curator`，验证 frontmatter、backlinks、write queue 和 review queue 是否可维护。
-7. 下一批小红书笔记继续按本表五栏追加，不覆盖旧结论。
+7. 对 Goal Brief 做 A/B，记录首次执行追问数、返工数和可验证完成率。
+8. 下一批小红书笔记继续按本表五栏追加，不覆盖旧结论。

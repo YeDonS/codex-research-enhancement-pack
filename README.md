@@ -1,6 +1,6 @@
 # Codex 科研能力增强包
 
-版本：v1.5
+版本：v1.6
 
 这个包把本批小红书笔记中可迁移的方法沉淀为可复用的 Codex 科研流程。当前产物是 workspace 内的草案包，尚未安装到 `$CODEX_HOME/skills`。
 
@@ -18,8 +18,8 @@ GitHub：[YeDonS/codex-research-enhancement-pack](https://github.com/YeDonS/code
 | `reproduction-data-analyst` | 审查论文代码复现和数据分析结果，记录环境、数据版本、命令、随机种子、指标差异和下一步排查 | 草案可用，待真实复现验证 |
 | `research-synthesis-writer` | 将证据卡、论文笔记和实验结果转为可追溯的综述、论文段落、审稿回复和投稿材料 | 草案可用，待真实写作任务验证 |
 | `submission-readiness-reviewer` | 投稿、预印本、camera-ready、rebuttal 或修订前审查 claim、图表、可复现性、匿名和 venue compliance | 草案可用，待真实投稿包验证 |
-| `research-knowledge-curator` | 整理 Obsidian/Zotero/论文卡/证据卡/实验卡和索引笔记，避免摘要堆积和弱证据入库 | 草案可用，待真实 vault 验证 |
-| `research-program-manager` | 维护长期科研目标、里程碑、证据审计、决策日志、阻塞升级、阶段 review 和可恢复状态 | 草案可用，待真实跨天任务验证 |
+| `research-knowledge-curator` | 整理 Obsidian/Zotero/项目对话、论文卡、证据卡、实验卡和索引笔记，避免摘要堆积和弱证据入库 | 已通过真实多会话项目压缩验证 |
+| `research-program-manager` | 维护长期科研目标、Goal Brief、里程碑、证据审计、决策日志、阻塞升级、阶段 review 和可恢复状态 | 已通过真实 goal 编译和多会话 handoff 验证 |
 | `research-handoff-review` | 管理跨天科研任务、PR/handoff、独立审查和复盘 | 草案可用，待项目试跑 |
 
 每个 skill 都包含 `SKILL.md` 和 `agents/openai.yaml`，并通过 skill-creator 的基础结构验证。验证记录见 [phase-1-validation.md](validation/phase-1-validation.md)。
@@ -39,7 +39,7 @@ GitHub：[YeDonS/codex-research-enhancement-pack](https://github.com/YeDonS/code
 python3 codex-research-enhancement-pack/scripts/validate_pack.py codex-research-enhancement-pack
 ```
 
-当前验证结果：通过。脚本检查必需产物、11 个 skill 的核心章节、`agents/openai.yaml`、进度五栏、eval fixtures 和 smoke eval 输出。最小 eval 计划见 [eval-plan.md](evals/eval-plan.md)，同会话 smoke eval 结果见 [eval-results-2026-06-21.md](validation/eval-results-2026-06-21.md)，独立输出位于 [evals/outputs/2026-06-21](evals/outputs/2026-06-21)。v1.5 首次用两篇真实系统论文联合验证文献精读、研究问题委员会和实验设计，结果见 [面向范围扫描的分层 Value Log](validation/real-task-hot-value-tiering-2026-06-21.md)。
+当前验证结果：通过。脚本检查必需产物、11 个 skill 的核心章节、`agents/openai.yaml`、进度五栏、eval fixtures 和 smoke eval 输出。最小 eval 计划见 [eval-plan.md](evals/eval-plan.md)，同会话 smoke eval 结果见 [eval-results-2026-06-21.md](validation/eval-results-2026-06-21.md)，独立输出位于 [evals/outputs/2026-06-21](evals/outputs/2026-06-21)。v1.5 首次用两篇真实系统论文联合验证文献精读、研究问题委员会和实验设计，结果见 [面向范围扫描的分层 Value Log](validation/real-task-hot-value-tiering-2026-06-21.md)。v1.6 新增 goal 编译与项目对话压缩，验证见 [goal-prompt 与对话压缩](validation/goal-prompt-and-conversation-curation-2026-06-22.md)。
 
 ## 科研任务流程
 
@@ -53,6 +53,7 @@ python3 codex-research-enhancement-pack/scripts/validate_pack.py codex-research-
 - 投稿准备：claim-evidence、图表、页数、匿名、可复现性、data/code availability 和 reviewer response。
 - 知识库整理：source audit、论文卡、证据卡、实验卡、索引笔记、去重、冲突和 review queue。
 - 长期任务管理：完整目标、requirement audit、里程碑、单一 active task、决策日志、阻塞升级、handoff 和 review。
+- 项目对话压缩：Goal Brief、会话清单、证据状态、重复问题聚类、决策日志和 context capsule。
 
 ## Prompt/Goal 模板
 

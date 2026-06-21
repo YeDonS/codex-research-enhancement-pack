@@ -258,3 +258,29 @@ $experiment-design-planner 处理两篇系统论文和已有笔记。
 - 将 2 GB 绑定 DB ratio、hot-set capacity 和 GC headroom。
 - 把 promotion、mapping update、fast/slow GC 和 demotion 写入总 WA 模型。
 - 输出 trace pilot、correctness MVP 和后续优化的分阶段路线。
+
+## 示例 11：压缩多轮系统项目对话
+
+```text
+使用 $research-knowledge-curator 和 $research-program-manager 整理一个
+跨多轮实验、代码审计和性能分析的存储系统项目。
+
+输入：
+- 最近 4 个 thread/session 导出
+- 项目目录中的代码、日志、分析表和已有 handoff
+- 当前目标：解释 read-priority 机制是否真的降低 request-level tail latency
+
+要求：
+1. 区分 SQLite/FIO 端到端指标、host request 指标和 FTL resource-tail 指标。
+2. 对每项结论绑定代码、日志、命令或用户决定。
+3. 合并重复的“为什么没有提升”问答，输出一条 canonical diagnosis path。
+4. 将“模拟调度假设”与“物理设备 claim”分开，冲突时列为用户决策。
+5. 输出 issue register、decision log、do-not-repeat 和一页 context capsule。
+6. 不把私有路径、原始对话或凭据写进公开 repo。
+```
+
+预期输出：
+
+- 只保留当前有效实验矩阵、指标字典和未验证假设。
+- 把代码修改、构建验证和真实性 claim 分为独立 gate。
+- 下一会话可直接从一个诊断命令或最小实验继续。

@@ -109,3 +109,17 @@
 - [ ] 哪些只是泛泛建议，需要删除。
 - [ ] 哪些需要重写为更窄触发条件。
 - [ ] 下一阶段验证任务是否具体到材料和产物。
+
+## L. Goal 编译与项目对话压缩清单
+
+- [ ] 粗略目标是否已转成 outcome、范围、交付物、完成证据、约束和假设。
+- [ ] 是否只询问会改变安全性、外部状态或可验证性的阻塞问题。
+- [ ] 检查/修复类任务是否区分 diagnosis 与 approval 后的 mutation。
+- [ ] 是否列出会话 ID、日期、主题、最终产物和当前状态，而不是只给聊天摘要。
+- [ ] 每个关键结论是否标为 verified fact、model assumption、unverified claim、user decision 或 open question。
+- [ ] assistant 的说法是否已回查到代码、日志、命令、论文或用户确认。
+- [ ] 是否把重复问答合并为 root-cause cluster、canonical answer、证据和下一项诊断。
+- [ ] 是否显式保留前后矛盾的解释及其 reversal condition。
+- [ ] 是否剔除了 tool chatter、注入的 continuation text 和无决策价值的重复输入。
+- [ ] context capsule 是否含目标、已证实状态、开放决策、blocker 和下一步动作。
+- [ ] 私有会话、绝对路径、凭据或项目数据是否没有进入公开技能包。

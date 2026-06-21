@@ -167,3 +167,24 @@
 质量标准：完整目标不漂移；进度绑定权威证据；只有一个 active task；下一次打开项目能直接执行；自动化减少重复解释。
 
 失败修正：活动过多则缩 active queue 但保留完整目标；证据弱则检查真实 artifact/runtime；漂移任务必须映射 completion criterion；日志空泛则补路径/命令/证据/下一步。
+
+## 9. 项目对话压缩与 Goal 编译流程
+
+触发条件：项目跨多次 Codex/agent 对话，出现重复追问、相互矛盾的解释、散落的实验结论，或用户只给出一句模糊任务目标。
+
+输入材料：会话导出或 thread IDs、项目目录、关键代码/日志/图表、当前目标、现有 handoff、是否允许直接修改目标项目。
+
+步骤：
+1. 先把粗略目标编译为 outcome、范围、交付物、完成证据、约束、合理假设和 approval gate。
+2. 建会话清单：日期、主题、最终产物、被修改文件、未解决问题；不把 tool chatter 当知识。
+3. 对每个重要结论回查代码、日志、命令或用户确认，将其标为 verified fact、model assumption、unverified claim、user decision 或 open question。
+4. 将重复问题聚为一个 root-cause cluster；每组只保留 canonical answer、证据位置和下一项诊断。
+5. 把相互冲突的解释写入 decision log，给出可反转条件；禁止用最后一次回答覆盖前面未验证的结论。
+6. 输出不超过一页的 context capsule：目标、已证实状态、开放决策、当前 blocker、下一条命令或审计动作。
+7. 若需要写入项目目录，先给 write plan；私有对话或路径不得混入公开 skill/repo。
+
+输出格式：Conversation Curation Report、goal brief、issue register、decision/assumption log、repeated-question clusters、context capsule、handoff。
+
+质量标准：下一会话只读 capsule 和链接的证据就能继续；结论不依赖聊天记忆；无证据的 assistant 解释不会升级为项目事实；只问真正阻塞执行的问题。
+
+失败修正：如果压缩后仍有大量“为什么”，回到一个可观测量、一段代码或一条日志重新定位；如果修复路径会改变模型语义，先把它升级为 user decision，不直接改实现。

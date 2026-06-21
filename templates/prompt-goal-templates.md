@@ -78,3 +78,38 @@
 请写 handoff，包含目标、范围、改动文件、命令/分析、产物路径、未完成事项、风险、下一步。
 然后用独立 review 视角检查本轮产物，只返回问题清单和修正建议。
 ```
+
+## 8. 粗略研究目标编译模板
+
+```text
+把下面一句话需求编译成可执行研究任务，不要写 prompt 教程。
+
+原始目标：<一句话目标>
+现有上下文：<项目/材料/已有产物>
+
+请输出：
+1. Goal Brief：outcome、范围、明确不做什么、交付物、完成证据、约束和合理假设。
+2. 只在会改变安全、外部状态或可验证性时提 1-3 个关键问题；其余信息用假设继续。
+3. 若任务涉及检查、debug、重构或修复，先给 inspection plan；检查完成后再给修复方案和影响，等待批准后修改。
+4. 一条当前可执行的 next action。
+```
+
+## 9. 项目对话压缩模板
+
+```text
+使用 research-knowledge-curator 和 research-program-manager 整理这些项目对话。
+
+输入：
+- 会话导出或 thread IDs：<...>
+- 项目目录：<...>
+- 关键日志/代码/实验结果：<...>
+- 当前目标：<...>
+
+要求：
+1. 先建会话清单和 source audit，不直接复述聊天。
+2. 把每个重要说法标成 verified fact、model assumption、unverified claim、user decision 或 open question。
+3. 聚合重复问答，只保留 canonical answer、证据位置和下一项诊断。
+4. 前后矛盾的解释保留为 decision，不允许用最后一条回答静默覆盖。
+5. 输出 issue register、decision/assumption log、do-not-repeat 和不超过一页的 context capsule。
+6. 私有对话与本机路径只写入项目私有 handoff，不进入公开 repo。
+```

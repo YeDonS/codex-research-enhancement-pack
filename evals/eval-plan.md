@@ -30,6 +30,7 @@ python3 codex-research-enhancement-pack/scripts/validate_pack.py codex-research-
 | `fixtures/knowledge-curation-minimal.md` | `research-knowledge-curator` | 不做摘要堆积；识别 abstract-only 弱证据、重复 DOI 和 unsupported universal claim；输出 source audit、note plan、claim registry、write/review queue |
 | `fixtures/long-running-goal-drift-minimal.md` | `research-program-manager` | 不误判 complete/blocked；保留真实验证标准；只有一个 in-progress；记录 blocker 次数；拒绝无关 CSS scope drift；输出 next proof |
 | `fixtures/handoff-minimal.md` | `research-handoff-review` | 生成 handoff；列出改动、未改动、证据、风险、下一步；review findings 先于总结 |
+| `fixtures/project-conversation-curation-minimal.md` | `research-knowledge-curator` + `research-program-manager` | 先做会话 source audit；区分 verified/model/unverified/user decision；合并重复问答；不把模拟规则写成硬件事实；输出 context capsule |
 
 ## 失败处理
 
