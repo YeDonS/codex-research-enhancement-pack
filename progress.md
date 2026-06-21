@@ -38,6 +38,8 @@
 - v1.6 verdict：不新增重复 prompt skill；将 Goal Brief/approval gate 并入 `research-program-manager`，将对话压缩、重复问题聚类和冲突保留并入 `research-knowledge-curator`。
 - v1.6 validation：新增对话压缩 fixture/output；真实项目产生私有 handoff，公开包仅保留去标识化规则和验证记录。
 - v1.6 installation：11 个自定义 skill 已安装到 `$CODEX_HOME/skills`；安装器 dry-run 正确拒绝静默覆盖，安装后的 `SKILL.md` 与包内版本逐项一致。
+- v1.7：在真实存储模拟器代码修复任务中验证 `research-program-manager`、`reproduction-data-analyst` 和 `experiment-design-planner`；新增模型契约、完整请求直方图、sample conservation、严格 run manifest 和 counter-gated mechanism attribution。
+- v1.7 verdict：静态、合成模型、分析器、manifest 和 FIO dry-run 通过；目标 Linux module build/load/stress 未执行，因此 runtime correctness 仍为 Partial。
 
 ## 批次 2026-06-21：小红书 Codex/Skill/科研工作流笔记
 
@@ -69,6 +71,12 @@
 |---|---|---|---|---|
 | 小红书短链 `7TV5moYC2gx`、公开 `goal-prompt-template-skill`、存储系统项目的最近四个会话、代码和结果摘要 | 短链 HTTP/HTTPS 均 404，不能提炼；公开 skill 中 outcome-first、默认假设、最少 blocker questions、inspection/repair gate 可迁移。真实项目证明：对话必须压成 session inventory、verified/model/unverified 分类、decision log、重复问题 cluster 和 context capsule；不能把模拟器规则写成硬件事实。 | 更新 `research-program-manager`、`research-knowledge-curator`、workflow、checklist、prompt templates、使用示例；新增 adversarial fixture/output、[验证记录](validation/goal-prompt-and-conversation-curation-2026-06-22.md) 和 v1.6 review；生成未公开的项目 handoff 并复制到目标项目 `docs/`。 | Goal compiler 与 conversation curation Pass；私有项目 audit 找到模型语义、机制归因、变体混杂、指标混用、runtime build 和版本管理问题。小红书内容为 Drop/待补材料。 | 在第二项目 A/B 验证减少追问与返工；为 storage 项目先固定 run manifest 和 request-level latency gate。 |
 
+## 真实代码任务批次 2026-06-22：存储模拟器修复与实验守门
+
+| 输入材料 | 提炼结论 | 转化产物 | 验证结果 | 下一步 |
+|---|---|---|---|---|
+| 存储模拟器 HP/LP timing 代码、latency1/2/3 wrapper、SQLite/FIO 脚本、静态测试、分析器和私有对话审计 | 模拟器调度必须声明 model boundary；p99 结论必须保留可复算 raw histogram 并检查 sample conservation；机制归因必须有非零 trigger/use counter；baseline/treatment 必须先通过 hash、flags、seed、workload 和 drain policy 的 run-manifest 比较。 | 更新 `reproduction-data-analyst`、`experiment-design-planner`；新增[真实代码验证](validation/real-task-storage-simulator-repair-2026-06-22.md)和 v1.7 review；目标项目新增模型 trace、严格 manifest、完整直方图、分析器测试和 runbook。 | 静态 invariants、合成模型、分析器、manifest unit test、Python/shell syntax 和单例 FIO dry-run Pass；目标 Linux module build/load/stress Pending，因此不声称 runtime/physical validity。 | 在目标 Linux 内核构建并加载模块；跑 canonical 四变体矩阵；只比较 compile/model/metric 三重契约均通过的 manifest，并保留 foreground/post-drain counters。 |
+
 ## 本批次沉淀出的能力
 
 | 能力 | 触发条件 | 输入材料 | 执行步骤 | 输出格式 | 质量标准 | 失败时修正 |
@@ -90,7 +98,8 @@
 - 评论区无法无登录读取，是否由用户提供截图或复制评论后纳入下一轮。
 - `literature-evidence-reader` 已通过两篇真实 PDF 的全文、图表和方法验证；仍需在有 supplement/code 的论文上验证跨材料追踪。
 - `research-question-council` 已在真实选题上完成压力测试；仍需比较是否真的优于普通 brainstorm，指标包括问题新颖性、可证伪性、实验成本和证据一致性。
-- `experiment-design-planner` 已产出真实系统实验计划，但 codebase、硬件、版本和命令未定，尚不能判为 execution-ready。
+- `experiment-design-planner` 已在真实系统代码中验证 manifest、模型 trace 和机制计数设计；目标内核 runtime 尚未执行，仍不能判为完整 execution pass。
+- `reproduction-data-analyst` 已在真实代码修复中通过静态、分析器、manifest 和 dry-run 验证；仍需目标 Linux module build/load/stress 和真实四变体结果。
 - `research-knowledge-curator` 和 `research-program-manager` 已通过一组真实多会话项目；仍需在独立项目复跑，检查是否真能减少追问和返工。
 - 长期任务 handoff 是否适合非代码科研任务，需要用一次数据分析或文献综述任务试跑。
 - 最小 eval fixture 已完成同会话 smoke eval 并拆分为独立输出文件，但尚未由独立会话逐项执行；下一步应独立重跑 13 个 fixture 并记录评分。
@@ -99,7 +108,7 @@
 
 1. 围绕 dual-vLog、range-aware tiering 和 hot value relocation 运行 `literature-landscape-researcher`，验证 query syntax、筛选、citation chaining 和 gap audit。
 2. 为 2 GB fast tier 建 trace-level simulator，验证 stable hotspot、capacity overflow、shifting range 和 sequential flooding。
-3. 确定 storage-engine codebase 和设备后，补齐 experiment plan 的版本、命令、seed 和 artifact paths。
+3. 在目标 Linux 主机执行 storage simulator module build/load、并发 stress 和四变体严格 manifest 对比。
 4. 用一个真实 notebook/CSV 运行 `reproduction-data-analyst`，验证缺失值、泄漏和敏感性分析检查是否足够具体。
 5. 用一个真实论文草稿或投稿包运行 `submission-readiness-reviewer`，验证 blocker 检查是否比单纯润色更有用。
 6. 用一个真实 Obsidian/Zotero 写入任务运行 `research-knowledge-curator`，验证 frontmatter、backlinks、write queue 和 review queue 是否可维护。

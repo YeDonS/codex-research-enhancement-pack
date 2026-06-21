@@ -1,6 +1,6 @@
 # Codex 科研能力增强包
 
-版本：v1.6
+版本：v1.7
 
 这个包把本批小红书笔记中可迁移的方法沉淀为可复用的 Codex 科研流程。当前工作站已将 11 个 skill 安装到 `$CODEX_HOME/skills`；其他环境按安装手册执行即可。
 
@@ -14,8 +14,8 @@ GitHub：[YeDonS/codex-research-enhancement-pack](https://github.com/YeDonS/code
 | `literature-landscape-researcher` | 可复现地检索、筛选和去重多来源文献，保留冲突并审计 research gap | 草案可用，待真实数据库验证 |
 | `literature-evidence-reader` | 单篇论文精读，产出证据卡、方法卡、变量表和入库笔记 | 已通过两篇真实 PDF 任务验证 |
 | `research-question-council` | 用多角色委员会压力测试研究问题、假设和实验计划 | 已通过真实选题压力测试，待 A/B 验证 |
-| `experiment-design-planner` | 设计和审查实验，明确假设、变量、指标、guardrails、决策规则和复现记录 | 真实计划部分通过，待原型运行验证 |
-| `reproduction-data-analyst` | 审查论文代码复现和数据分析结果，记录环境、数据版本、命令、随机种子、指标差异和下一步排查 | 草案可用，待真实复现验证 |
+| `experiment-design-planner` | 设计和审查实验，明确假设、变量、指标、guardrails、run manifest、机制计数和复现记录 | 已通过真实系统代码静态/dry-run 验证，待目标内核运行 |
+| `reproduction-data-analyst` | 审查论文代码复现和数据分析结果，记录环境、数据版本、命令、随机种子、原始分布、指标差异和下一步排查 | 已通过真实系统代码静态/dry-run 验证，待目标内核运行 |
 | `research-synthesis-writer` | 将证据卡、论文笔记和实验结果转为可追溯的综述、论文段落、审稿回复和投稿材料 | 草案可用，待真实写作任务验证 |
 | `submission-readiness-reviewer` | 投稿、预印本、camera-ready、rebuttal 或修订前审查 claim、图表、可复现性、匿名和 venue compliance | 草案可用，待真实投稿包验证 |
 | `research-knowledge-curator` | 整理 Obsidian/Zotero/项目对话、论文卡、证据卡、实验卡和索引笔记，避免摘要堆积和弱证据入库 | 已通过真实多会话项目压缩验证 |
@@ -39,7 +39,7 @@ GitHub：[YeDonS/codex-research-enhancement-pack](https://github.com/YeDonS/code
 python3 codex-research-enhancement-pack/scripts/validate_pack.py codex-research-enhancement-pack
 ```
 
-当前验证结果：通过。脚本检查必需产物、11 个 skill 的核心章节、`agents/openai.yaml`、进度五栏、eval fixtures 和 smoke eval 输出。最小 eval 计划见 [eval-plan.md](evals/eval-plan.md)，同会话 smoke eval 结果见 [eval-results-2026-06-21.md](validation/eval-results-2026-06-21.md)，独立输出位于 [evals/outputs/2026-06-21](evals/outputs/2026-06-21)。v1.5 首次用两篇真实系统论文联合验证文献精读、研究问题委员会和实验设计，结果见 [面向范围扫描的分层 Value Log](validation/real-task-hot-value-tiering-2026-06-21.md)。v1.6 新增 goal 编译与项目对话压缩，验证见 [goal-prompt 与对话压缩](validation/goal-prompt-and-conversation-curation-2026-06-22.md)。
+当前验证结果：通过。脚本检查必需产物、11 个 skill 的核心章节、`agents/openai.yaml`、进度五栏、eval fixtures 和 smoke eval 输出。最小 eval 计划见 [eval-plan.md](evals/eval-plan.md)，同会话 smoke eval 结果见 [eval-results-2026-06-21.md](validation/eval-results-2026-06-21.md)，独立输出位于 [evals/outputs/2026-06-21](evals/outputs/2026-06-21)。v1.5 首次用两篇真实系统论文联合验证文献精读、研究问题委员会和实验设计，结果见 [面向范围扫描的分层 Value Log](validation/real-task-hot-value-tiering-2026-06-21.md)。v1.6 新增 goal 编译与项目对话压缩，验证见 [goal-prompt 与对话压缩](validation/goal-prompt-and-conversation-curation-2026-06-22.md)。v1.7 使用真实存储模拟器修复任务验证模型契约、运行清单、原始直方图和机制归因守门，见 [真实系统代码修复验证](validation/real-task-storage-simulator-repair-2026-06-22.md)。
 
 ## 科研任务流程
 

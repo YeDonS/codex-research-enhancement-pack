@@ -16,6 +16,7 @@ Use this skill when the user asks to design an experiment, test a hypothesis, pl
 - Data sources, sample size, inclusion/exclusion rules, labels, and known data quality issues.
 - Baselines, metrics, expected effects, constraints, time/budget/compute limits.
 - Existing code, logs, prior runs, paper methods, or evidence cards.
+- Runtime model assumptions, compile-time features, mechanism counters, loaded artifact identity, and completion/drain policy for systems experiments.
 - Risk priorities such as fairness, calibration, safety, privacy, reproducibility, or subgroup performance.
 
 ## Procedure
@@ -34,9 +35,12 @@ Use this skill when the user asks to design an experiment, test a hypothesis, pl
    - Prefer a pilot or slice before full benchmark.
    - Define sample size, split, random seed, baseline, ablations, and stopping condition.
    - Separate exploratory analysis from confirmatory claims.
+   - For scheduler or resource-contention claims, add a minimal synthetic trace that exposes operation issue/start/end, wait, bypass, and completion order.
 5. Plan reproducibility:
    - Record data version, code version, environment, commands, seeds, outputs, and artifact paths.
    - Predefine how to handle failed runs, missing labels, and excluded data.
+   - Define an immutable run manifest and a comparison gate that permits only the intended treatment field to differ.
+   - Require raw distributions and sample-conservation checks for percentile or tail-latency claims.
 6. Audit tradeoffs:
    - Check whether the primary metric can improve while guardrail metrics worsen.
    - Require a decision rule for conflicting metrics.
@@ -77,6 +81,12 @@ Use this skill when the user asks to design an experiment, test a hypothesis, pl
 
 ## Reproducibility Record
 
+## Run Manifest Contract
+| Field | Baseline | Treatment | Must Match? | Evidence |
+
+## Mechanism Attribution
+| Claimed Mechanism | Trigger | Counter/Trace | Minimum Evidence | Failure Meaning |
+
 ## Review Checklist
 ```
 
@@ -90,6 +100,9 @@ Use this skill when the user asks to design an experiment, test a hypothesis, pl
 - If codebase, hardware, data version, or runnable commands are still unknown, label the result plan-only or partial pass instead of execution-ready.
 - Decision rules include what to do if metrics conflict.
 - Reproducibility details are sufficient for another session to rerun or audit.
+- Simulator scheduling assumptions are explicitly separated from physical device capabilities.
+- Every causal mechanism claim has a trigger counter, a use counter or trace, and a matched ablation.
+- A comparison is rejected when compile flags, seeds, workload shape, loaded artifact, or drain policy differ unintentionally.
 
 ## Failure Repair
 
@@ -99,3 +112,6 @@ Use this skill when the user asks to design an experiment, test a hypothesis, pl
 - If the result is underpowered, label it exploratory and avoid strong claims.
 - If reproduction details are missing, stop and create a run log template before executing.
 - If implementation target or hardware is undecided, finish the hypothesis and pilot design, list the missing execution inputs, and do not claim a full validation pass.
+- If mechanism counters remain zero, do not tune thresholds to rescue the story; first verify that the mechanism executed and rerun the matched ablation.
+- If only summary percentiles exist, add raw histogram/distribution output and verify sample conservation before interpreting tails.
+- If a simulator can reorder work that real hardware cannot preempt, either bound the claim to the simulator or implement and test a physically supported model.
