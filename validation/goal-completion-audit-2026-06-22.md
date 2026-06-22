@@ -30,9 +30,10 @@
 
 ## GitHub State
 
-- Local branch, `origin/codex/real-task-hot-value-tiering`, and Draft PR #1
-  were verified at the same head revision after the final audit push.
-- Draft PR #1 is open and mergeable.
+- Local branch, remote feature branch, and PR #1 were verified at the same head
+  revision before merge.
+- PR #1 was merged into `main`; the public `main` README was then read back
+  through the GitHub API and reports version v1.7.
 - No CI checks are configured; local package, skill, install-consistency and link checks are the recorded acceptance evidence.
 
 ## Final Verdict

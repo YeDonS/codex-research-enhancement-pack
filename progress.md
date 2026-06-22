@@ -40,7 +40,7 @@
 - v1.6 installation：11 个自定义 skill 已安装到 `$CODEX_HOME/skills`；安装器 dry-run 正确拒绝静默覆盖，安装后的 `SKILL.md` 与包内版本逐项一致。
 - v1.7：在真实存储模拟器代码修复任务中验证 `research-program-manager`、`reproduction-data-analyst` 和 `experiment-design-planner`；新增模型契约、完整请求直方图、sample conservation、严格 run manifest 和 counter-gated mechanism attribution。
 - v1.7 verdict：静态、合成模型、分析器、manifest 和 FIO dry-run 通过；目标 Linux module build/load/stress 未执行，因此 runtime correctness 仍为 Partial。
-- v1.7 completion audit：六条原始完成标准逐项 Proven；11 个 skill、9 类 workflow、12 组 checklist、9 类模板、rubric、12 个示例、14 组 fixture/output、安装一致性和 Markdown 链接均已验证；GitHub 远端分支与本地提交一致。
+- v1.7 completion audit：六条原始完成标准逐项 Proven；11 个 skill、9 类 workflow、12 组 checklist、9 类模板、rubric、12 个示例、14 组 fixture/output、安装一致性和 Markdown 链接均已验证；PR #1 已合并，GitHub `main` 已读回确认版本为 v1.7。
 
 ## 批次 2026-06-21：小红书 Codex/Skill/科研工作流笔记
 
