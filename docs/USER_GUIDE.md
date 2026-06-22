@@ -44,7 +44,7 @@ python3 scripts/install_skills.py --all
 | 复现代码/审查数据分析 | `$reproduction-data-analyst` | repo/notebook、数据版本、命令、日志、目标指标 |
 | 写综述/论文段落/审稿回复 | `$research-synthesis-writer` | 证据卡、结果、冲突、目标文本类型 |
 | 投稿前检查 | `$submission-readiness-reviewer` | manuscript、figures/tables、日志、venue 规则 |
-| 整理 Obsidian/Zotero | `$research-knowledge-curator` | PDF、旧笔记、Zotero、实验日志、vault 约定 |
+| 整理 Obsidian/Zotero/项目对话 | `$research-knowledge-curator` | PDF、旧笔记、实验日志、会话导出、thread IDs、vault/项目约定 |
 | 管理长期科研计划 | `$research-program-manager` | 完整目标、完成标准、当前证据、约束、里程碑和阻塞 |
 | 跨天任务交接和独立 review | `$research-handoff-review` | 目标、改动、命令、产物路径、风险 |
 
@@ -75,6 +75,7 @@ python3 scripts/install_skills.py --all
 2. 每轮只保留一个 in-progress 动作，记录命令、文件、输出和验证。
 3. 阶段结束时区分结构通过、真实能力通过和仍缺证据。
 4. 用 `$research-handoff-review` 生成下一会话可直接执行的交接。
+5. 对话已膨胀时，用 `$research-knowledge-curator` 先建 conversation inventory、decision/assumption log 和 context capsule，再继续执行。
 
 ## 5. 处理新笔记批次
 
@@ -105,3 +106,10 @@ python3 scripts/install_skills.py --all
 - `reviews/`：每阶段方法有效性复盘。
 
 结构校验通过只证明包完整，不证明真实科研能力已经验证。真实任务结果应继续追加到 `validation/` 和 `progress.md`。
+
+## 8. 真实任务参考
+
+- [WiscKey + HotRAP：面向范围扫描的分层 Value Log](../validation/real-task-hot-value-tiering-2026-06-21.md)：展示如何从两篇全文证据出发，淘汰弱创新表述，形成研究问题、系统草图、GC/一致性协议、2 GB capacity policy、实验 guardrails 和 stop/revise/continue 规则。
+- [Goal Prompt 与项目对话压缩](../validation/goal-prompt-and-conversation-curation-2026-06-22.md)：展示如何把多轮对话压成 Goal Brief、证据状态、重复问题簇、决策日志和可恢复 context capsule。
+- [真实存储模拟器修复](../validation/real-task-storage-simulator-repair-2026-06-22.md)：展示 model contract、严格 run manifest、原始直方图守恒和 counter-gated mechanism attribution。
+- 真实任务报告中的 `Pass` 只评价对应 skill 产物；没有运行代码时，实验设计必须标 `plan-only` 或 `Partial Pass`。

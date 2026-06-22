@@ -39,7 +39,12 @@ REQUIRED_FILES = [
     "reviews/stage-2026-06-21-v1.2-review.md",
     "reviews/stage-2026-06-21-v1.3-review.md",
     "reviews/stage-2026-06-21-v1.4-review.md",
+    "reviews/stage-2026-06-21-v1.5-review.md",
+    "reviews/stage-2026-06-22-v1.6-review.md",
     "validation/phase-1-validation.md",
+    "validation/real-task-hot-value-tiering-2026-06-21.md",
+    "validation/goal-prompt-and-conversation-curation-2026-06-22.md",
+    "validation/goal-completion-audit-2026-06-22.md",
     "evals/eval-plan.md",
 ]
 
@@ -83,6 +88,7 @@ FIXTURES = [
     "evals/fixtures/knowledge-curation-minimal.md",
     "evals/fixtures/long-running-goal-drift-minimal.md",
     "evals/fixtures/handoff-minimal.md",
+    "evals/fixtures/project-conversation-curation-minimal.md",
 ]
 
 EVAL_OUTPUTS = [
@@ -99,6 +105,7 @@ EVAL_OUTPUTS = [
     "evals/outputs/2026-06-21/knowledge-curation-minimal-output.md",
     "evals/outputs/2026-06-21/long-running-goal-drift-minimal-output.md",
     "evals/outputs/2026-06-21/handoff-minimal-output.md",
+    "evals/outputs/2026-06-22/project-conversation-curation-minimal-output.md",
 ]
 
 

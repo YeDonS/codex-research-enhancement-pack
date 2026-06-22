@@ -8,17 +8,17 @@
 
 | Skill | 验证命令 | 结果 |
 |---|---|---|
-| `xhs-method-ingester` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/xhs-method-ingester` | 通过：`Skill is valid!` |
-| `literature-landscape-researcher` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/literature-landscape-researcher` | 通过：`Skill is valid!` |
-| `literature-evidence-reader` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/literature-evidence-reader` | 通过：`Skill is valid!` |
-| `research-question-council` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/research-question-council` | 通过：`Skill is valid!` |
-| `experiment-design-planner` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/experiment-design-planner` | 通过：`Skill is valid!` |
-| `reproduction-data-analyst` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/reproduction-data-analyst` | 通过：`Skill is valid!` |
-| `research-synthesis-writer` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/research-synthesis-writer` | 通过：`Skill is valid!` |
-| `submission-readiness-reviewer` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/submission-readiness-reviewer` | 通过：`Skill is valid!` |
-| `research-knowledge-curator` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/research-knowledge-curator` | 通过：`Skill is valid!` |
-| `research-program-manager` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/research-program-manager` | 通过：`Skill is valid!` |
-| `research-handoff-review` | `python3 /Users/ladorezr/.codex/skills/.system/skill-creator/scripts/quick_validate.py codex-research-enhancement-pack/skills/research-handoff-review` | 通过：`Skill is valid!` |
+| `xhs-method-ingester` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/xhs-method-ingester` | 通过：`Skill is valid!` |
+| `literature-landscape-researcher` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/literature-landscape-researcher` | 通过：`Skill is valid!` |
+| `literature-evidence-reader` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/literature-evidence-reader` | 通过：`Skill is valid!` |
+| `research-question-council` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/research-question-council` | 通过：`Skill is valid!` |
+| `experiment-design-planner` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/experiment-design-planner` | 通过：`Skill is valid!` |
+| `reproduction-data-analyst` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/reproduction-data-analyst` | 通过：`Skill is valid!` |
+| `research-synthesis-writer` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/research-synthesis-writer` | 通过：`Skill is valid!` |
+| `submission-readiness-reviewer` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/submission-readiness-reviewer` | 通过：`Skill is valid!` |
+| `research-knowledge-curator` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/research-knowledge-curator` | 通过：`Skill is valid!` |
+| `research-program-manager` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/research-program-manager` | 通过：`Skill is valid!` |
+| `research-handoff-review` | `python3 $CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py skills/research-handoff-review` | 通过：`Skill is valid!` |
 
 ## UI 元数据
 
@@ -82,7 +82,7 @@ python3 codex-research-enhancement-pack/scripts/validate_pack.py codex-research-
 
 ```text
 PACK VALIDATION PASSED
-- root: /Users/ladorezr/Documents/codex_pro/codex-research-enhancement-pack
+- root: `<repo-root>`
 - skills: 11
 - required files: 23
 - eval fixtures: 13

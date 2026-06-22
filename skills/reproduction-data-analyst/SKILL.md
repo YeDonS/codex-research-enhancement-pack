@@ -17,6 +17,7 @@ Use this skill when the user asks to reproduce a paper, run or audit code, analy
 - Environment details: OS, package manager, dependencies, GPU/CPU, model versions, seeds.
 - Local run logs, errors, metrics, artifacts, and expected metrics.
 - Tolerance threshold for matching the target result.
+- Simulator/model semantics, loaded binary or module identity, compile flags, and mechanism counters when the result depends on an implementation model.
 - Missingness rules, exclusion criteria, grouping keys, leakage risks, and sensitivity analyses if the task is data analysis rather than code reproduction.
 
 ## Procedure
@@ -27,6 +28,7 @@ Use this skill when the user asks to reproduce a paper, run or audit code, analy
 2. Preflight repository and environment:
    - Inspect README, configs, dependency files, scripts, and expected data paths.
    - Record package versions, hardware, model/checkpoint versions, and random seed controls.
+   - Freeze a run manifest containing source/binary hashes, compile flags, model semantics, workload parameters, seeds, and drain/completion policy.
 3. Audit data provenance and analysis validity:
    - Verify dataset version, split, preprocessing, filtering, label mapping, and checksums.
    - For data analysis, check missingness, exclusion timing, grouping keys, repeated subjects, label leakage, train/test leakage, and whether sensitivity analyses are needed.
@@ -37,9 +39,12 @@ Use this skill when the user asks to reproduce a paper, run or audit code, analy
 5. Compare metrics:
    - Report target, local result, delta, tolerance, and pass/fail.
    - Include confidence intervals or seed variance when available.
+   - Preserve raw distributions or histogram buckets when a tail/percentile claim is central, and verify that bucket/sample totals match the reported request count.
 6. Diagnose mismatch:
    - Check data version, preprocessing, split, dependency drift, checkpoint mismatch, nondeterminism, metric implementation, hardware differences, missingness bias, and leakage.
    - Do not declare success if the metric is outside tolerance.
+   - Require nonzero trigger/use counters before attributing a result to a scheduler, cache, migration, GC, or other claimed mechanism.
+   - Separate simulator behavior from hardware behavior unless device evidence validates the same semantics.
 7. Produce handoff:
    - Record what was reproduced, what failed, evidence paths, suspected causes, and next smallest diagnostic run.
 
@@ -65,6 +70,9 @@ Use this skill when the user asks to reproduce a paper, run or audit code, analy
 
 ## Reproducibility Record
 
+## Model And Mechanism Contract
+| Claim | Model Boundary | Trigger Counter | Use Counter | Evidence | Verdict |
+
 ## Decision
 - Reproduced:
 - Not reproduced:
@@ -81,6 +89,10 @@ Use this skill when the user asks to reproduce a paper, run or audit code, analy
 - Mismatch triage names concrete causes and next checks.
 - Long runs start with a smoke test or small-slice test unless the user explicitly approves full cost.
 - Generated artifacts are not committed blindly; large data and model files are referenced by path or manifest.
+- Baseline and treatment manifests match on every non-treatment field before metrics are compared.
+- Tail claims retain recomputable distributions and pass sample-conservation checks.
+- A mechanism with zero observed trigger/use count cannot explain an improvement.
+- Static tests do not substitute for building and running the loaded binary/module on the target environment.
 
 ## Failure Repair
 
@@ -91,3 +103,6 @@ Use this skill when the user asks to reproduce a paper, run or audit code, analy
 - If a data-analysis result is significant but missingness or leakage is unresolved, do not report the claim as final; run sensitivity analysis or grouped evaluation first.
 - If runs are nondeterministic, repeat seeds or report variance before deciding.
 - If output paths are missing, stop and add run logging before continuing.
+- If manifests differ outside the treatment variable, reject the comparison and rerun a clean ablation.
+- If model semantics are ambiguous, label the result as simulator-only and add a discriminating synthetic trace before making a hardware claim.
+- If a percentile summary cannot be recomputed or its samples do not balance, repair instrumentation before interpreting performance.

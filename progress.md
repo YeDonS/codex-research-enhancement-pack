@@ -1,6 +1,6 @@
 # Codex 科研能力增强进度记录
 
-更新时间：2026-06-21
+更新时间：2026-06-22
 
 ## 包级进展
 
@@ -31,6 +31,16 @@
 - v1.4 review：明确长期任务失败标准：不能把结构通过当完成，不能多个 in-progress，不能因单个外部依赖停止全部工作。
 - v1.4 validation：11 个 skill 完整安装成功；重复安装被拒绝；显式 `--force` 可替换指定 skill；整包和 Markdown 链接验证通过。
 - v1.4 GitHub：已发布公开仓库 `https://github.com/YeDonS/codex-research-enhancement-pack`；初始远端提交 `e53b0fc` 与本地 `main` 一致。
+- v1.5：使用 WiscKey 和 HotRAP 两篇真实 PDF 及已有 Obsidian 笔记，联合验证 `literature-evidence-reader`、`research-question-council` 和 `experiment-design-planner`。
+- v1.5 verdict：淘汰“普通热 value promotion”表述，将问题收窄为 repeated hot-range tracking、key-ordered fast-vLog extent、GC-assisted relocation 和 total WA guardrail。
+- v1.5 validation：真实任务产物 rubric 15/16；文献精读与选题委员会通过，实验计划因 codebase、硬件和命令未定而部分通过。
+- v1.6：学习 `goal-prompt-template-skill` 的 outcome-first goal compiler，并对真实多会话存储系统项目执行对话审计。
+- v1.6 verdict：不新增重复 prompt skill；将 Goal Brief/approval gate 并入 `research-program-manager`，将对话压缩、重复问题聚类和冲突保留并入 `research-knowledge-curator`。
+- v1.6 validation：新增对话压缩 fixture/output；真实项目产生私有 handoff，公开包仅保留去标识化规则和验证记录。
+- v1.6 installation：11 个自定义 skill 已安装到 `$CODEX_HOME/skills`；安装器 dry-run 正确拒绝静默覆盖，安装后的 `SKILL.md` 与包内版本逐项一致。
+- v1.7：在真实存储模拟器代码修复任务中验证 `research-program-manager`、`reproduction-data-analyst` 和 `experiment-design-planner`；新增模型契约、完整请求直方图、sample conservation、严格 run manifest 和 counter-gated mechanism attribution。
+- v1.7 verdict：静态、合成模型、分析器、manifest 和 FIO dry-run 通过；目标 Linux module build/load/stress 未执行，因此 runtime correctness 仍为 Partial。
+- v1.7 completion audit：六条原始完成标准逐项 Proven；11 个 skill、9 类 workflow、12 组 checklist、9 类模板、rubric、12 个示例、14 组 fixture/output、安装一致性和 Markdown 链接均已验证；GitHub 远端分支与本地提交一致。
 
 ## 批次 2026-06-21：小红书 Codex/Skill/科研工作流笔记
 
@@ -49,6 +59,24 @@
 | 9. [Codex + Obsidian 学习日常](https://xhslink.com/o/1ULOv5cYaai) | 自动化应形成闭环：计划、学习页、练习记录、归档笔记、日志。科研里对应：研究计划、阅读卡、复现记录、证据库、每日/每周日志。 | 科研任务流程模板；长期任务管理清单；goal 模板。 | 正文可读，评论不可读。适合长期研究管理。 | 建立“每日科研 heartbeat”或定时 automation 的最小任务定义。 |
 | 10. [ChatGPT 和 Codex 自己协作](https://xhslink.com/o/53CNeJy7z47) | 新架构明确角色：ChatGPT 拆任务/审 PR，Codex 执行，GitHub PR 记录，用户拍板。核心规则：不直接改 main、不越权重构、不提交二进制/密钥/隐私、范围不清先问。 | `research-handoff-review` skill；协作流程；风险清单。 | 正文可读，评论不可读。与第 8 条互相印证。 | 把规则迁移到科研项目 repo 的 `AGENTS.md`。 |
 | 11. [Codex 文献阅读流程](https://xhslink.com/o/GplQCgP5nk) | “文献阅读到 Obsidian 知识库”不宜一口气全自动。失败点是跑太久、token 爆炸、只产摘要、没读图表/supplement、全靠人工审核。应先做单篇精读，经人工确认后入库，知识库存证据卡/方法卡/变量表/结论来源，而不是摘要堆积。 | `literature-evidence-reader` skill；文献流程模板；文献质量清单。 | 正文可读，评论不可读。与目标高度相关，是本批次最高价值输入。 | 选择 1 篇论文跑单篇精读，验证 evidence card 是否可用。 |
+
+## 真实科研任务批次 2026-06-21：WiscKey + HotRAP
+
+| 输入材料 | 提炼结论 | 转化产物 | 验证结果 | 下一步 |
+|---|---|---|---|---|
+| WiscKey 全文 PDF、HotRAP 全文 PDF、两篇 Obsidian 既有笔记、少量定向 related-work 元数据 | 普通 record-hot promotion 已被 HotRAP 覆盖；更有价值的问题是 repeated range hotness、value-only key-ordered extent、2 GB capacity admission、GC-assisted relocation 和 crash-safe mapping publication。GC 只能摊销部分 source read，不能视为零成本；逐 key index update 可能增加 WA。 | [真实任务验证报告](validation/real-task-hot-value-tiering-2026-06-21.md)；研究问题 council；双 vLog 系统草图；P0-P3 实验路线；v1.5 review；实验 skill 的 execution-readiness 修正规则。 | 文献精读 Pass；研究问题委员会 Pass；实验计划 Partial Pass。Rubric 15/16，缺少选定 codebase、设备、版本和可运行命令；未声明系统方法有效或 novelty 已确认。 | 建 systematic related-work protocol；先做 2 GB trace simulator；通过后实现 direct-pointer correctness MVP 和 crash tests。 |
+
+## 学习与真实项目批次 2026-06-22：Goal Prompt 与对话压缩
+
+| 输入材料 | 提炼结论 | 转化产物 | 验证结果 | 下一步 |
+|---|---|---|---|---|
+| 小红书短链 `7TV5moYC2gx`、公开 `goal-prompt-template-skill`、存储系统项目的最近四个会话、代码和结果摘要 | 短链 HTTP/HTTPS 均 404，不能提炼；公开 skill 中 outcome-first、默认假设、最少 blocker questions、inspection/repair gate 可迁移。真实项目证明：对话必须压成 session inventory、verified/model/unverified 分类、decision log、重复问题 cluster 和 context capsule；不能把模拟器规则写成硬件事实。 | 更新 `research-program-manager`、`research-knowledge-curator`、workflow、checklist、prompt templates、使用示例；新增 adversarial fixture/output、[验证记录](validation/goal-prompt-and-conversation-curation-2026-06-22.md) 和 v1.6 review；生成未公开的项目 handoff 并复制到目标项目 `docs/`。 | Goal compiler 与 conversation curation Pass；私有项目 audit 找到模型语义、机制归因、变体混杂、指标混用、runtime build 和版本管理问题。小红书内容为 Drop/待补材料。 | 在第二项目 A/B 验证减少追问与返工；为 storage 项目先固定 run manifest 和 request-level latency gate。 |
+
+## 真实代码任务批次 2026-06-22：存储模拟器修复与实验守门
+
+| 输入材料 | 提炼结论 | 转化产物 | 验证结果 | 下一步 |
+|---|---|---|---|---|
+| 存储模拟器 HP/LP timing 代码、latency1/2/3 wrapper、SQLite/FIO 脚本、静态测试、分析器和私有对话审计 | 模拟器调度必须声明 model boundary；p99 结论必须保留可复算 raw histogram 并检查 sample conservation；机制归因必须有非零 trigger/use counter；baseline/treatment 必须先通过 hash、flags、seed、workload 和 drain policy 的 run-manifest 比较。 | 更新 `reproduction-data-analyst`、`experiment-design-planner`；新增[真实代码验证](validation/real-task-storage-simulator-repair-2026-06-22.md)和 v1.7 review；目标项目新增模型 trace、严格 manifest、完整直方图、分析器测试和 runbook。 | 静态 invariants、合成模型、分析器、manifest unit test、Python/shell syntax 和单例 FIO dry-run Pass；目标 Linux module build/load/stress Pending，因此不声称 runtime/physical validity。 | 在目标 Linux 内核构建并加载模块；跑 canonical 四变体矩阵；只比较 compile/model/metric 三重契约均通过的 manifest，并保留 foreground/post-drain counters。 |
 
 ## 本批次沉淀出的能力
 
@@ -69,18 +97,21 @@
 ## 待验证问题
 
 - 评论区无法无登录读取，是否由用户提供截图或复制评论后纳入下一轮。
-- `literature-evidence-reader` 需要用真实 PDF 验证是否能读到图表、方法和 supplement，而不是只写摘要。
-- `research-question-council` 需要比较是否真的优于普通 brainstorm，指标包括问题新颖性、可证伪性、实验成本和证据一致性。
+- `literature-evidence-reader` 已通过两篇真实 PDF 的全文、图表和方法验证；仍需在有 supplement/code 的论文上验证跨材料追踪。
+- `research-question-council` 已在真实选题上完成压力测试；仍需比较是否真的优于普通 brainstorm，指标包括问题新颖性、可证伪性、实验成本和证据一致性。
+- `experiment-design-planner` 已在真实系统代码中验证 manifest、模型 trace 和机制计数设计；目标内核 runtime 尚未执行，仍不能判为完整 execution pass。
+- `reproduction-data-analyst` 已在真实代码修复中通过静态、分析器、manifest 和 dry-run 验证；仍需目标 Linux module build/load/stress 和真实四变体结果。
+- `research-knowledge-curator` 和 `research-program-manager` 已通过一组真实多会话项目；仍需在独立项目复跑，检查是否真能减少追问和返工。
 - 长期任务 handoff 是否适合非代码科研任务，需要用一次数据分析或文献综述任务试跑。
 - 最小 eval fixture 已完成同会话 smoke eval 并拆分为独立输出文件，但尚未由独立会话逐项执行；下一步应独立重跑 13 个 fixture 并记录评分。
 
 ## 下一步计划
 
-1. 用一个真实研究主题运行 `literature-landscape-researcher`，验证 query syntax、筛选和 gap audit。
-2. 用一篇用户指定论文运行 `literature-evidence-reader`，输出单篇精读包和入库候选卡。
-3. 用同一研究方向运行 `research-question-council`，生成 3 个候选研究问题并打分。
+1. 围绕 dual-vLog、range-aware tiering 和 hot value relocation 运行 `literature-landscape-researcher`，验证 query syntax、筛选、citation chaining 和 gap audit。
+2. 为 2 GB fast tier 建 trace-level simulator，验证 stable hotspot、capacity overflow、shifting range 和 sequential flooding。
+3. 在目标 Linux 主机执行 storage simulator module build/load、并发 stress 和四变体严格 manifest 对比。
 4. 用一个真实 notebook/CSV 运行 `reproduction-data-analyst`，验证缺失值、泄漏和敏感性分析检查是否足够具体。
 5. 用一个真实论文草稿或投稿包运行 `submission-readiness-reviewer`，验证 blocker 检查是否比单纯润色更有用。
-6. 用一个真实 Obsidian/Zotero 样例运行 `research-knowledge-curator`，验证路径、frontmatter、backlinks 和 review queue 是否可维护。
-7. 完成 `gh auth login` 后发布到 `YeDonS/codex-research-enhancement-pack`。
+6. 用一个真实 Obsidian/Zotero 写入任务运行 `research-knowledge-curator`，验证 frontmatter、backlinks、write queue 和 review queue 是否可维护。
+7. 对 Goal Brief 做 A/B，记录首次执行追问数、返工数和可验证完成率。
 8. 下一批小红书笔记继续按本表五栏追加，不覆盖旧结论。

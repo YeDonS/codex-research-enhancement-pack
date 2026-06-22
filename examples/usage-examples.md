@@ -232,3 +232,55 @@
 - Program charter、requirement audit、milestones、work queue 和 decision log。
 - Scope drift 被拒绝或映射到完成标准。
 - Completion/blocked 状态由证据和规则决定。
+
+## 示例 10：两篇论文到可验证系统选题
+
+```text
+依次使用 $literature-evidence-reader、$research-question-council 和
+$experiment-design-planner 处理两篇系统论文和已有笔记。
+
+研究设想：在 key/value 分离的 LSM 中识别反复扫描的 hot ranges，
+把 values 从 slow vlog 提升到 2 GB fast vlog，并考虑在 GC 时搬迁。
+
+要求：
+1. 每个关键判断绑定论文页码、图、表或 section。
+2. 区分已有机制、真正缺口和仍需检索的 novelty。
+3. 不预设 promotion 会降低总写放大。
+4. 给出 crash-safe publication、并发更新、cold eviction 和 GC 方案。
+5. 定义 baseline、ablation、primary metric、guardrails 和 decision rules。
+6. codebase 或硬件未定时标 Partial Pass，不写 execution-ready。
+```
+
+预期输出：
+
+- 淘汰与已有论文重复的宽泛问题。
+- 给出一个可证伪的 narrow research question。
+- 将 2 GB 绑定 DB ratio、hot-set capacity 和 GC headroom。
+- 把 promotion、mapping update、fast/slow GC 和 demotion 写入总 WA 模型。
+- 输出 trace pilot、correctness MVP 和后续优化的分阶段路线。
+
+## 示例 11：压缩多轮系统项目对话
+
+```text
+使用 $research-knowledge-curator 和 $research-program-manager 整理一个
+跨多轮实验、代码审计和性能分析的存储系统项目。
+
+输入：
+- 最近 4 个 thread/session 导出
+- 项目目录中的代码、日志、分析表和已有 handoff
+- 当前目标：解释 read-priority 机制是否真的降低 request-level tail latency
+
+要求：
+1. 区分 SQLite/FIO 端到端指标、host request 指标和 FTL resource-tail 指标。
+2. 对每项结论绑定代码、日志、命令或用户决定。
+3. 合并重复的“为什么没有提升”问答，输出一条 canonical diagnosis path。
+4. 将“模拟调度假设”与“物理设备 claim”分开，冲突时列为用户决策。
+5. 输出 issue register、decision log、do-not-repeat 和一页 context capsule。
+6. 不把私有路径、原始对话或凭据写进公开 repo。
+```
+
+预期输出：
+
+- 只保留当前有效实验矩阵、指标字典和未验证假设。
+- 把代码修改、构建验证和真实性 claim 分为独立 gate。
+- 下一会话可直接从一个诊断命令或最小实验继续。
