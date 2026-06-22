@@ -30,8 +30,9 @@
 
 ## GitHub State
 
-- Local branch and `origin/codex/real-task-hot-value-tiering` both point to commit `6c08c52`.
-- Draft PR #1 is open, mergeable, and its head matches `6c08c52`.
+- Local branch, `origin/codex/real-task-hot-value-tiering`, and Draft PR #1
+  were verified at the same head revision after the final audit push.
+- Draft PR #1 is open and mergeable.
 - No CI checks are configured; local package, skill, install-consistency and link checks are the recorded acceptance evidence.
 
 ## Final Verdict
